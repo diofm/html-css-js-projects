@@ -34,7 +34,7 @@ body {
   transform: rotate(90deg);
 }
 .container .game .img:last-child {
-  transform: rotate(-90deg);
+  transform: rotate(90deg) scaleY(-1);
 }
 
 .result {
@@ -58,3 +58,4 @@ body {
 .choices h2 {
   font-size: 1.2rem;
 }
+
