@@ -20,7 +20,7 @@ function generateHex() {
 // function to display the generated color
 function generateColor() {
   colorEl.forEach((el) => {
-    colorsContainer.style.display = 'flex';
+    colorsContainer.style.display = 'grid';
     savedColorsContainer.style.display = 'none';
     const colorBg = el.querySelector(".color-main");
     const hex = el.querySelector(".hex");
@@ -52,7 +52,7 @@ savedBtn.addEventListener('click', function() {
   let htmlTemp = ``;
   savedColorsContainer.innerHTML = '';
   colorsContainer.style.display = 'none';
-  savedColorsContainer.style.display = 'flex';
+  savedColorsContainer.style.display = 'grid';
   
   savedColors.forEach((el) => {
     let element = `

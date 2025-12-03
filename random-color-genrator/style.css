@@ -37,12 +37,12 @@ h1 {
   cursor: pointer;
 }
 .colors, .saved-colors {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
-  flex-wrap: wrap;
 }
 .color {
-  width: 127px;
+  width: 100%;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 10px;
   overflow: hidden;
@@ -67,4 +67,9 @@ h1 {
 
 i {
   cursor: pointer;
+}
+@media (max-width: 700px) {
+  .colors, .saved-colors {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
