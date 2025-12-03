@@ -16,6 +16,7 @@ body {
   background-color: #fff;
   padding: 1rem 2rem;
   width: clamp(80%, 700px, 900px);
+  border-radius: 1rem;
 }
 h1 {
   text-align: center;
@@ -35,28 +36,29 @@ h1 {
   font-weight: bold;
   cursor: pointer;
 }
-.colors {
+.colors, .saved-colors {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
-.colors .color {
-  width: 100%;
+.color {
+  width: 127px;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 10px;
   overflow: hidden;
 }
-.colors .color .color-main {
+.color .color-main {
   width: 100%;
   height: 120px;
   background-color: #0061ff;
   position: relative;
 }
-.colors .color .color-main i {
+.color .color-main i {
   position: absolute;
   top: 8px;
   right: 5px;
 }
-.colors .color .color-footer {
+.color .color-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
