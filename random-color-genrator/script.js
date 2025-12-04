@@ -20,6 +20,8 @@ function generateHex() {
 // function to display the generated color
 function generateColor() {
   colorEl.forEach((el) => {
+
+    
     colorsContainer.style.display = 'grid';
     savedColorsContainer.style.display = 'none';
     const colorBg = el.querySelector(".color-main");
@@ -41,6 +43,10 @@ function generateColor() {
           localStorage.setItem('savedColors', JSON.stringify(savedColors));
         }
       }
+      if(e.target.classList.contains('fa-trash-can')) {
+        const hexValue = el.closest('.color').querySelector('.hex').textContent;
+        console.log(hexValue);
+      }
     });
   });
 }
@@ -49,24 +55,41 @@ generateColor();
 generateBtn.addEventListener("click", generateColor);
 
 savedBtn.addEventListener('click', function() {
-  let htmlTemp = ``;
   savedColorsContainer.innerHTML = '';
   colorsContainer.style.display = 'none';
   savedColorsContainer.style.display = 'grid';
   
   savedColors.forEach((el) => {
     let element = `
-    <div class="color">
           <div class="color-main" style="background: ${el}">
-            <i class="fa-regular fa-bookmark"></i>
+            <i class="fa-regular fa-trash-can"></i>
           </div>
           <div class="color-footer">
             <div class="hex">${el}</div>
             <i class="fa-regular fa-copy"></i>
           </div>
-        </div>
     `
-    htmlTemp+= element
+    const colorDiv = document.createElement('div')
+    colorDiv.classList.add('color')
+    colorDiv.innerHTML = element
+    // remove color from saved colors
+    colorDiv.addEventListener('click', function(e) {
+      if(e.target.classList.contains('fa-trash-can')) {
+        const hexValue = colorDiv.querySelector('.hex').textContent;
+        const index = savedColors.indexOf(hexValue);
+        if(index > -1) {
+          savedColors.splice(index, 1);
+          localStorage.setItem('savedColors', JSON.stringify(savedColors));
+          colorDiv.remove();
+        }
+      }
+      // copy hex code
+      if(e.target.classList.contains('fa-copy')) {
+        const hex = colorDiv.querySelector('.hex').textContent;
+        navigator.clipboard.writeText(hex);
+      }
+    });
+
+    savedColorsContainer.appendChild(colorDiv)
   })
-  savedColorsContainer.innerHTML = htmlTemp
 })
