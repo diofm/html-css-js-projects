@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Irish Grover", system-ui;
+  background-color: #1B1B1B;
+  overflow-x: hidden;
+}
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+/* Start nav */
+nav {
+  
+  padding: 20px 0;
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .container .start-game-btn {
+  padding: 8px 16px;
+  background-color: rgb(224, 224, 224);
+  font-family: "Irish Grover", system-ui;
+  color: #1B1B1B;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+nav .container .game-info {
+  color: #fff;
+  font-size: 1.5rem;
+}
+/* End nav */
+/* Start main */
+main {
+  margin-top: 5rem;
+}
+main .container  h1{
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  margin-bottom: 4rem;
+}
+main .container .answer {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  min-width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  position: relative;
+  padding: 0 12px;
+}
+main .container .answer::after {
+  content: "";
+  width: 5000px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: -1;
+}
+main .container .player-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .player-tab .number-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+main .player-tab .number-input input {
+  width: 150px;
+  border: 3px solid white;
+  background-color: #1B1B1B;
+  font-size: 2rem;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+main .player-tab .number-input button {
+  padding: 10px 20px;
+  background-color: rgb(224, 224, 224);
+  font-family: "Irish Grover", system-ui;
+  color: #1B1B1B;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+main .player-tab .score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  color: white;
+}
