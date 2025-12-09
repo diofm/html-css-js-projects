@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="btn" data-key="65">
+      <kbd>A</kbd>
+      <h3>Clap</h3>
+    </div>
+    <div class="btn active" data-key="83">
+      <kbd>s</kbd>
+      <h3>boom</h3>
+    </div>
+    <div class="btn" data-key="68">
+      <kbd>d</kbd>
+      <h3>hithat</h3>
+    </div>
+    <div class="btn" data-key="70">
+      <kbd>f</kbd>
+      <h3>kick</h3>
+    </div>
+    <div class="btn" data-key="71">
+      <kbd>g</kbd>
+      <h3>openhat</h3>
+    </div>
+    <div class="btn" data-key="72">
+      <kbd>h</kbd>
+      <h3>ride</h3>
+    </div>
+    <div class="btn" data-key="74">
+      <kbd>j</kbd>
+      <h3>snare</h3>
+    </div>
+    <div class="btn" data-key="75">
+      <kbd>k</kbd>
+      <h3>tink</h3>
+    </div>
+  </div>
+
+  <!-- audio tags -->
+  <audio src="./sounds/clap.wav" id="clap" data-key="65"></audio>
+  <audio src="./sounds/boom.wav" id="boom" data-key="83"></audio>
+  <audio src="sounds/hihat.wav" id="hithat" data-key="68"></audio>
+  <audio src="./sounds/kick.wav" id="kick" data-key="70"></audio>
+  <audio src="./sounds/openhat.wav" id="openhat" data-key="71"></audio>
+  <audio src="./sounds/ride.wav" id="ride" data-key="72"></audio>
+  <audio src="./sounds/snare.wav" id="snare" data-key="74"></audio>
+  <audio src="./sounds/tink.wav" id="tink" data-key="75"></audio>
+
+  <script src="js/index.js"></script>
+</body>
+</html>
